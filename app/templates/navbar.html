@@ -1,32 +1,19 @@
-<div class="navbar navbar-light" role="navigation" style="margin-bottom:0; border-bottom: 1px solid;">
+<div class="navbar" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
             <a href="/" class="navbar-brand"> One Minute Pitch </a>
+            <a href="/">Home</a>
+            <a class="navbar-item" href="{{url_for('main.interview_pitches')}}">Interview</a>
+            <a class="navbar-item" href="{{url_for('main.product_pitches')}}">Product</a>
+            <a class="navbar-item mr-auto" href="{{url_for('main.promotion_pitches')}}">Promotion</a> 
         </div>
-        <div>
-                <ul class="nav navbar-nav navbar-right"></ul>
-                    <a href="/">Home</a>
-                    <a class="navbar-link" href="{{url_for('main.interview_pitches')}}">Interview</a>
-                    <a class="navbar-link" href="{{url_for('main.product_pitches')}}">Product</a>
-                    <a class="navbar-link mr" href="{{url_for('main.promotion_pitches')}}">Promotion</a>
-                
-
-                
+        <div>     
                     {% if current_user.is_authenticated %}
-                    <li class="nav-item">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Dropdown button
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a class="dropdown-item" href="#">Action</a>
-                              <a class="dropdown-item" href="#">Another action</a>
-                              <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                          </div>
+                    <a class="navbar-item btn" href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a>
+                    <a class="navbar-item btn" href="{{url_for('main.user_pitches',uname=current_user.username)}}">My Pitches</a>
+                    <a class="navbar-item btn" href="{{url_for('auth.logout')}}">Sign out</a>                    
                     {% else %}
-                    <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
-                </ul>
+                    <li><a href="{{url_for('auth.login')}}">Sign in</a></li>                
                 {%endif%}
             </div>
     </div>
