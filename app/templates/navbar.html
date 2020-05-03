@@ -1,11 +1,12 @@
-<div class="navbar" role="navigation">
+<div class="navbar blue-gradient text-light" role="navigation">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <a href="/" class="navbar-brand"> One Minute Pitch </a>
-            <a href="/">Home</a>
-            <a class="navbar-item" href="{{url_for('main.interview_pitches')}}">Interview</a>
-            <a class="navbar-item" href="{{url_for('main.product_pitches')}}">Product</a>
-            <a class="navbar-item mr-auto" href="{{url_for('main.promotion_pitches')}}">Promotion</a> 
+        <div class="navbar-header mr-auto">
+            <a href="/" class="navbar-brand btn"> One Minute Pitch </a>    
+        </div>
+        <div class="mr-auto">
+          <a class="navbar-item btn" href="{{url_for('main.interview_pitches')}}">Interview</a>
+          <a class="navbar-item btn" href="{{url_for('main.product_pitches')}}">Product</a>
+          <a class="navbar-item btn mr-auto" href="{{url_for('main.promotion_pitches')}}">Promotion</a> 
         </div>
         <div>     
                     {% if current_user.is_authenticated %}
@@ -13,7 +14,7 @@
                     <a class="navbar-item btn" href="{{url_for('main.user_pitches',uname=current_user.username)}}">My Pitches</a>
                     <a class="navbar-item btn" href="{{url_for('auth.logout')}}">Sign out</a>                    
                     {% else %}
-                    <li><a href="{{url_for('auth.login')}}">Sign in</a></li>                
+                    <a class="navbar-item btn" href="{{url_for('auth.login')}}">Sign in</a>                
                 {%endif%}
             </div>
     </div>
