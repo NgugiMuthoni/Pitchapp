@@ -5,8 +5,10 @@
 
 <!-- Content block -->
 {%block content%}
-
-<h1 style="text-align:center; background-color:black; color:green;padding:80px;">MY PITCH PROJECT</h1>
+<br>
+<div class="container-fluid ">
+    <h1 class="jumbotron text-monospace text-center peach-gradient">MY PITCH PROJECT</h1>
+</div>
 
 <div class="container text-center" style="padding-bottom: 20px;">
     <a href="{{url_for('main.new_pitch')}}" class="btn btn-success">Create pitch</a>
@@ -22,7 +24,7 @@
                 <div class="view view-cascade gradient-card-header peach-gradient">
 
                     <!-- Title -->
-                    <h2 class="card-header-title mb-3">Interview_pitches</h2>
+                    <h2 class="card-header-title mb-3 text-monospace text-center">Interview Pitches</h2>
 
 
                 </div>
@@ -55,7 +57,7 @@
                 <div class="view view-cascade gradient-card-header peach-gradient">
 
                     <!-- Title -->
-                    <h2 class="card-header-title mb-3">Product Pitches</h2>
+                    <h2 class="card-header-title mb-3 text-monospace text-center">Product Pitches</h2>
 
 
                 </div>
@@ -65,8 +67,8 @@
 
                     <!-- Text -->
                     <p class="card-text">Sales pitches are also called "elevator pitches" because you should be able to
-                        tell the story in the time it takes you to ride an elevator with a prospect -- a maximum of 1-2
-                        minutes. Salespeople are past the point of giving prospects an hour-long presentation to sell
+                        tell the story in the time it takes you to ride an elevator with a prospect.
+                         Salespeople are past the point of giving prospects an hour-long presentation to sell
                         products or services.</p>
                     <!-- Link -->
                     <a href="{{url_for('main.product_pitches')}}" class="orange-text d-flex flex-row-reverse p-2">
@@ -89,7 +91,7 @@
                 <div class="view view-cascade gradient-card-header peach-gradient">
 
                     <!-- Title -->
-                    <h2 class="card-header-title mb-3">Promotion</h2>
+                    <h2 class="card-header-title mb-3 text-monospace text-center">Promotional Pitches</h2>
 
 
                 </div>
