@@ -1,12 +1,13 @@
 import os
 
+
 class Config:
     '''
     General configuration parent class
     '''
     SECRET_KEY = os.environ.get('SECRET_KEY')
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://king:90210@localhost/moringa'
-    UPLOADED_PHOTOS_DEST ='app/static'
+    UPLOADED_PHOTOS_DEST = 'app/static'
     SQLALCHEMY_TRACK_MODIFICATIONS = True
     # email configurations
     MAIL_SERVER = 'smtp.gmail.com'
@@ -14,6 +15,7 @@ class Config:
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
+
 
 class ProdConfig(Config):
     '''
@@ -24,6 +26,7 @@ class ProdConfig(Config):
     '''
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://king:90210@localhost/moringa'
 
+
 class TestConfig(Config):
     '''
     Testing configuration child class
@@ -32,6 +35,7 @@ class TestConfig(Config):
         Config: The parent configuration class with General configuration settings
     '''
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://king:90210@localhost/moringa'
+
 
 class DevConfig(Config):
     '''
@@ -44,9 +48,10 @@ class DevConfig(Config):
 
     DEBUG = True
     ENV = 'development'
-    
+
+
 config_options = {
-'development':DevConfig,
-'production':ProdConfig,
-'test':TestConfig
+    'development': DevConfig,
+    'production': ProdConfig,
+    'test': TestConfig
 }
